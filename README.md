@@ -1,5 +1,7 @@
 # Cryptocurrency Dashboard
+A crypto dashboard is a digital platform that lives on a website or an app (either desktop or mobile). Its primary function is to track your cryptocurrency accounts and coins and monitor their historical prices and current values so that you can manage both your crypto assets and related financial plans accordingly.
 
+## Description
 - This is a cryptocurrency dashboard made using React. This Application is mainly usefull for viwing all the details of    cryptocurrencies according to the market cap.
 
 - This application provides a beautiful user interface to view the cryptocurrencies by using different charts and  graphs with giving the time duration.
@@ -25,19 +27,24 @@
 ## Deployment Link
 [Netlify] - (https://cryptocurrency-app-by-tusharkanta.netlify.app/)
 
-## Available Script
-
+## Available Script to Run the Project
+### `npm install`
+It will downloads all the dependencies and packages for the project.
 ### `npm start`
 Runs the app in the development mode.
-
 ### `npm test`
 Launches the test runner in the interactive watch mode.
-
 ### `npm run build`
 Builds the app for production to the `build` folder.
-
 ### `npm run eject`
 If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
+### Some More Features about the Project
+- This Project is completely responsive for any Kind of device.
+- It Provides a better User Interface and Better User Experience.
+- It Provides a Coin Exchange Feature so that the user is able to sell and buy different currencies.
+- We also able to see the market cap of different currencies.
+- A Search Box is implemented to filter out different cryptocurrencies.
+- Different Charts like Line, Bar and Pie Charts are used to provide better User Experience.
 
 ## ----- Thank You -----
