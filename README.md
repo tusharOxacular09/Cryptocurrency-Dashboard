@@ -1,72 +1,48 @@
-# Getting Started with Create React App
+# Cryptocurrency Dashboard
 
-// First Hit "npm install" in the terminal so that you will get all the necessary packages for running this app.
+- This is a cryptocurrency dashboard made using React. This Application is mainly usefull for viwing all the details of    cryptocurrencies according to the market cap.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- This application provides a beautiful user interface to view the cryptocurrencies by using different charts and  graphs with giving the time duration.
 
-## Available Scripts
+- Live API is used inside the application for viewing the Live data so that the application makes an interesting user experience.
 
-In the project directory, you can run:
+- Different Libraries are used for providing a better User Interface as well as User Experience.   
+
+
+## Simple User Interface of Cryptocurrency Dashboard
+[![Simple Demo of UI here..](./public/svg-images/simpleUI.png)](URL)
+
+
+## Libraries and Dependencies
+- [ReactJS] - (https://reactjs.org/)
+- [ReduxJS] - (https://redux.js.org/)
+- [React-redux] - (https://react-redux.js.org/)
+- [TailwindCSS] - (https://tailwindcss.com/)
+- [Chart.js] - (https://www.chartjs.org/)
+- [React-chartjs-2] - (https://react-chartjs-2.js.org/)
+- [React-toastify] - (https://fkhadra.github.io/react-toastify/introduction/)
+- [Coingecko API] - (https://www.coingecko.com/en/api/documentation/)
+
+## Simple Video Demo
+
+[Youtube] - (https://www.youtube.com/watch?v=SSoX6Yo-vs8)
+
+## Deployment Link
+[Netlify] - (https://cryptocurrency-app-by-tusharkanta.netlify.app/)
+
+## Available Script
 
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Runs the app in the development mode.
 
 ### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
 ### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Builds the app for production to the `build` folder.
 
 ### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
 If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## ----- Thank You -----
