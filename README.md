@@ -6,12 +6,7 @@
 
 - Live API is used inside the application for viewing the Live data so that the application makes an interesting user experience.
 
-- Different Libraries are used for providing a better User Interface as well as User Experience.   
-
-
-## Simple User Interface of Cryptocurrency Dashboard
-[![Simple Demo of UI here..](./public/svg-images/simpleUI.png)](URL)
-
+- Different Libraries are used for providing a better User Interface as well as User Experience.
 
 ## Libraries and Dependencies
 - [ReactJS] - (https://reactjs.org/)
