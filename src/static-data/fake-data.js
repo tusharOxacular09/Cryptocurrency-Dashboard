@@ -1,9 +1,11 @@
+// currencies of different countries
 export const myCurrencies = [
   "USD",
   "INR",
   "EUR"
 ];
 
+// Chart Types
 export const ChatType = [
   "Bar-Chart",
   "Line-Chrat"

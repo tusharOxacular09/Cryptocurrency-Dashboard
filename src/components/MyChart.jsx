@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Chart as ChartJS, defaults } from "chart.js/auto";
 import { Bar, Line } from "react-chartjs-2";
-import axios from "axios";
-import { HistoricalChart } from "../api";
+import { HistoricalChart } from "../api/api";
 import { useDispatch, useSelector } from "react-redux";
 import { networkError } from "../redux/state/action";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 export const MyChart = () => {
   const dispatch = useDispatch();

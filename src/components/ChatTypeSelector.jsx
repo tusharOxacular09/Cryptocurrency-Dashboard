@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChatType } from "../fake-data";
+import { ChatType } from "../static-data/fake-data";
 import { useDispatch, useSelector } from "react-redux";
 import { myChartType } from "../redux/state/action";
 

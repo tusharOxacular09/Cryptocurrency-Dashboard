@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { CoinList } from "../api";
+import { CoinList } from "../api/api";
 import axios from "axios";
-import { OfflineData } from "../fake-data";
+import { OfflineData } from "../static-data/fake-data";
 import { toast } from "react-toastify";
 
 const MarketCap = () => {

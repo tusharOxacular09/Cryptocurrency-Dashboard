@@ -16,7 +16,7 @@ export const currencyOfCountry = (currency) => {
     }
 }
 
-// number of days selector
+// Number of days selector
 export const numberOfDays = (days) => {
     return {
         type: "NumberOfDays",
@@ -24,7 +24,7 @@ export const numberOfDays = (days) => {
     }
 }
 
-// chart-type selector
+// Chart-type selector
 export const myChartType = (chart) => {
     return {
         type: "chartType",
@@ -32,7 +32,7 @@ export const myChartType = (chart) => {
     }
 }
 
-// Error Handling
+// Handling Network Error
 export const networkError = (error) => {
     return {
         type: "NetwokError",
