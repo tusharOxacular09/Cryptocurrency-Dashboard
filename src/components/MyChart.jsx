@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Chart as ChartJS, defaults } from "chart.js/auto";
+import { defaults } from "chart.js/auto";
 import { Bar, Line } from "react-chartjs-2";
 import { HistoricalChart } from "../api/api";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,34 +8,42 @@ import { toast } from "react-toastify";
 import axios from "axios";
 
 export const MyChart = () => {
+  // dispatch to update the states of react-redux
   const dispatch = useDispatch();
+  // selected current cryptocurrency through react-redux
   const id = useSelector((state) => state.currentCryptocurrency);
+  // selected current currency through react-redux
   const currency = useSelector((state) => state.currentCurrency);
+  // selected days count through react-redux
   const days = useSelector((state) => state.DaysCount);
+  // selected chart type through react-redux
   const selectedChart = useSelector((state) => state.ChartTypeSelector);
-
   const [data, setData] = useState([]);
-  const getData = async () => {
-    try {
-      const { data } = await axios.get(
-        HistoricalChart(id.toLowerCase(), days, currency)
-      );
-      setData(data.prices);
-    } catch (error) {
-      if (error.message === "Request failed with status code 404") {
-        toast.warning(`The Data is unavailable for ${id.toUpperCase()}`);
-      }
-      if (error.message === "Network Error") {
-        dispatch(networkError(true));
-      }
-      console.log(error.message);
-    }
-  };
 
+  // useEffect hook to render te function on each changes in the following dependency
   useEffect(() => {
+    // async function to get historical data from api
+    const getData = async () => {
+      try {
+        const { data } = await axios.get(
+          HistoricalChart(id.toLowerCase(), days, currency)
+        );
+        setData(data.prices);
+      } catch (error) {
+        if (error.message === "Request failed with status code 404") {
+          toast.warning(`The Data is unavailable for ${id.toUpperCase()}`);
+        }
+        if (error.message === "Network Error") {
+          dispatch(networkError(true));
+        }
+        console.log(error.message);
+      }
+    };
+    // calling function
     getData();
-  }, [id, days, currency]);
+  }, [id, days, currency, dispatch]);
 
+  // Adding some default properties to the charts
   defaults.maintainAspectRatio = false;
   defaults.responsive = true;
   defaults.plugins.title.display = true;

@@ -13,44 +13,52 @@ const CoinExchange = () => {
   const [sellAmount, setSellAmount] = useState(null);
   const [buyAmount, setBuyAmount] = useState(0);
   const [sellDetails, setSellDetails] = useState({});
+  // dispatch to update the states of react-redux
   const dispatch = useDispatch();
   const [error, setError] = useState(false);
 
+  // function to open the drop-down on clicking of sell list
   const togglingSell = () => {
     setIsSellOpen((prev) => !prev);
   };
 
+  // function to open the drop-down on clicking of buy list
   const togglingBuy = () => {
     setIsBuyOpen((prev) => !prev);
   };
 
+  // function to select currencies from sell drop-down list
   const selectSellCurrency = (currency) => {
     setSell(currency);
     setIsSellOpen((prev) => !prev);
   };
 
+  // function to select currencies from buy drop-down list
   const selectBuyCurrency = (currency) => {
     setBuy(currency);
     setIsBuyOpen((prev) => !prev);
   };
 
-  const getExchangeRate = async () => {
-    try {
-      const mycurrencies = await axios.get(
-        "https://api.coingecko.com/api/v3/exchange_rates"
-      );
-      setTargetedCurrencies(mycurrencies["data"]["rates"]);
-      setError(false);
-    } catch (error) {
-      dispatch(networkError(true));
-      setError(true);
-    }
-  };
-
+  // useEffect hook to render the function on each render
   useEffect(() => {
+    // async function to get the exchange rate of the coin
+    const getExchangeRate = async () => {
+      try {
+        const mycurrencies = await axios.get(
+          "https://api.coingecko.com/api/v3/exchange_rates"
+        );
+        setTargetedCurrencies(mycurrencies["data"]["rates"]);
+        setError(false);
+      } catch (error) {
+        dispatch(networkError(true));
+        setError(true);
+      }
+    };
+    // calling the function
     getExchangeRate();
-  }, []);
+  }, [dispatch]);
 
+  // function to calculet the exchange rate
   const HandleClick = () => {
     const buyAmt = parseFloat(sellAmount) / parseFloat(sellDetails["value"]);
     setBuyAmount(buyAmt.toFixed(2));
@@ -186,4 +194,5 @@ const CoinExchange = () => {
   );
 };
 
+// Default export
 export default CoinExchange;

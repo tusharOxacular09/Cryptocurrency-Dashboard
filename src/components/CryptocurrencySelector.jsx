@@ -9,6 +9,7 @@ const CryptocurrencySelector = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [cryptoCurrencies, setCryptoCurrencies] = useState([]);
 
+  // async function to get the list of available crypto currencies
   async function getCryptoCurrencies() {
     try {
       const { data } = await axios.get(
@@ -16,18 +17,21 @@ const CryptocurrencySelector = () => {
       );
       setCryptoCurrencies(data);
     } catch (error) {
-        dispatch(networkError(true));
+      dispatch(networkError(true));
     }
   }
 
+  // useEffect hook to render the function on each reload
   useEffect(() => {
     getCryptoCurrencies();
   });
 
+  // Function to open and close the drop-down list
   const toggling = () => {
     setIsOpen((prev) => !prev);
   };
 
+  // function to select the crypto currencies from the list
   const selectCurrency = (currency) => {
     dispatch(cryptocurrency(currency));
     setIsOpen((prev) => !prev);
@@ -76,4 +80,5 @@ const CryptocurrencySelector = () => {
   );
 };
 
+// Default export
 export default CryptocurrencySelector;

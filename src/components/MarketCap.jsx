@@ -6,23 +6,26 @@ import { OfflineData } from "../static-data/fake-data";
 import { toast } from "react-toastify";
 
 const MarketCap = () => {
+  // selected current currency through react-redux
   const selectedCurrency = useSelector((state) => state.currentCurrency);
   const [cryptocurrencies, setCryptocurrencies] = useState([]);
 
-  const fetchData = async () => {
-    try {
-      const { data } = await axios.get(CoinList(selectedCurrency));
-      setCryptocurrencies(data);
-    } catch (error) {
-      // If Internet Error Comes It will display Offline Data.
-      // For Better User Experience.
-      // Otherwise Blank Screen may Impact an Boringness to the user.
-      setCryptocurrencies(OfflineData);
-      toast.warning("Maximum API Calling Exceeded.");
-    }
-  };
-
+  // useEffect hook to render the function on each reload or changes
   useEffect(() => {
+    // async function to fetch data from api
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.get(CoinList(selectedCurrency));
+        setCryptocurrencies(data);
+      } catch (error) {
+        // If Internet Error Comes It will display Offline Data.
+        // For Better User Experience.
+        // Otherwise Blank Screen may Impact an Boringness to the user.
+        setCryptocurrencies(OfflineData);
+        toast.warning("Maximum API Calling Exceeded.");
+      }
+    };
+    // calling the function
     fetchData();
   }, [selectedCurrency]);
 
@@ -95,4 +98,5 @@ const MarketCap = () => {
   );
 };
 
+// Default export
 export default MarketCap;

@@ -5,11 +5,16 @@ import { currencyOfCountry } from "../redux/state/action";
 
 const CurrencySelector = () => {
   const selectedCurrency = useSelector((state) => state.currentCurrency);
+  // dispatch to update the states of react-redux
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
+
+  // function to open and close the drop-down on clicking
   const toggling = () => {
     setIsOpen((prev) => !prev);
   };
+
+  // function to select the crypto currencies from the list
   const selectCurrency = (currency) => {
     dispatch(currencyOfCountry(currency));
     setIsOpen((prev) => !prev);
@@ -55,4 +60,5 @@ const CurrencySelector = () => {
   );
 };
 
+// Default export
 export default CurrencySelector;

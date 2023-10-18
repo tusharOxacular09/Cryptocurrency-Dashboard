@@ -4,18 +4,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { myChartType } from "../redux/state/action";
 
 const ChatTypeSelector = () => {
+  // state for opening the drop-down
   const [isOpen, setIsOpen] = useState(false);
+  // selected chart through react-redux
   const selectedChart = useSelector((state) => state.ChartTypeSelector);
+  // dispatch to update the states of react-redux
   const dispatch = useDispatch();
 
+  // function to open the drop-down on clicking
   const toggling = () => {
     setIsOpen((prev) => !prev);
   };
 
+  // function to select currencies from the drop-down list
   const selectCurrency = (chart) => {
     dispatch(myChartType(chart));
     setIsOpen((prev) => !prev);
   };
+
   return (
     <div className="max-sm:w-10/12 w-4/12 max-lg:w-5/12 max-sm:h-6 h-10 flex rounded-md border hover:text-blue-700 hover:border-blue-500">
       <div className="w-full h-full items-center relative flex rounded-md bg-slate-100 shadow-sm">
@@ -57,4 +63,5 @@ const ChatTypeSelector = () => {
   );
 };
 
+// Default export
 export default ChatTypeSelector;

@@ -6,12 +6,13 @@ import MarketCap from "./components/MarketCap";
 import NavBar from "./components/NavBar";
 import Portfolio from "./components/Portfolio";
 import SearchBox from "./components/SearchBox";
-
 import { toast } from 'react-toastify';
 
 function App() {
+  // If the Internet is turned off then it will show an error as a toaset.
   const networkError = useSelector((state) => state.NetworkErrorHandler);
   if (networkError) {
+    // displayoing toast on the User Interface for better experience and understandable
     toast.error("Please Check Your Internet Connection !!")
   } else {
     console.log("No Error");

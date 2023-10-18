@@ -9,32 +9,40 @@ const Portfolio = () => {
   const [topCryptos, setTopCryptos] = useState([]);
   const selectedCurrency = useSelector((state) => state.currentCurrency);
   const [totalVal, setTotalVal] = useState(0);
+  // dispatch to update the states of react-redux
   const dispatch = useDispatch();
-  const Top3CryptoCurrenciesSelector = async () => {
-    try {
-      const topCryptoCurrencies = await axios.get(
-        "https://tusharoxacular09.github.io/cryptocurrency_api/api.json"
-      );
-      setTopCryptos(topCryptoCurrencies.data.slice(1, 4));
-    } catch (error) {
-      setTopCryptos(OfflineData.slice(0, 3));
-      dispatch(networkError(true));
-    }
-  };
 
-  const TotalValue = () => {
-    let val = 0;
-    topCryptos.map((crypto) => {
-      val += parseInt(crypto.current_price);
-    });
-    setTotalVal(val);
-  };
-
+  // useEffect hook to render the function on each changes of the given dependency
   useEffect(() => {
+    // async function to get the top 3 crypto currencies from api
+    const Top3CryptoCurrenciesSelector = async () => {
+      try {
+        const topCryptoCurrencies = await axios.get(
+          "https://tusharoxacular09.github.io/cryptocurrency_api/api.json"
+        );
+        setTopCryptos(topCryptoCurrencies.data.slice(1, 4));
+      } catch (error) {
+        setTopCryptos(OfflineData.slice(0, 3));
+        dispatch(networkError(true));
+      }
+    };
+
+    // calling the function
     Top3CryptoCurrenciesSelector();
-  }, [selectedCurrency]);
+  }, [selectedCurrency, dispatch]);
 
+  // useEffect hook to render the function on each changes of the given dependency
   useEffect(() => {
+    // function to calculate the total price of all selected cryptocurrencies
+    const TotalValue = () => {
+      let val = 0;
+      topCryptos.map((crypto) => {
+        return (val += parseInt(crypto.current_price));
+      });
+      setTotalVal(val);
+    };
+
+    // calling the function
     TotalValue();
   }, [topCryptos]);
 
@@ -83,4 +91,5 @@ const Portfolio = () => {
   );
 };
 
+// Default Export
 export default Portfolio;
