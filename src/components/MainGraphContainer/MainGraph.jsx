@@ -3,7 +3,7 @@ import CryptocurrencySelector from "./CryptocurrencySelector.jsx";
 import ChatTypeSelector from "./ChatTypeSelector.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { MyChart } from "./MyChart.jsx";
-import { numberOfDays } from "../redux/state/action/index.js";
+import { numberOfDays } from "../../redux/state/action/index.js";
 
 const MainGraph = () => {
   // dispatch to update the states of react-redux
@@ -23,7 +23,7 @@ const MainGraph = () => {
   });
 
   // constant styling for tailwind css
-  const mystyle = `bg-slate-100 max-sm:p-1 max-sm:text-xs px-4 py-2 max-lg:px-3 max-sm:rounded-lg rounded-xl border hover:bg-blue-200 cursor-pointer`;
+  const mystyle = `bg-slate-100 max-sm:p-1 max-sm:text-xs px-4 py-2 max-lg:px-3 max-sm:rounded-lg rounded-xl max-sm:border border-2 hover:bg-blue-200 cursor-pointer`;
   return (
     <div className="mt-4 p-1 w-full h-96 bg-white shadow-sm transition ease-in-out hover:ring-4 ring-blue-400 ring-offset-slate-50 rounded-md">
       <div className="h-1/6 pt-2">
@@ -32,9 +32,7 @@ const MainGraph = () => {
           <div className="w-6/12 lg:w-5/12 h-full flex justify-evenly items-center lg:font-medium">
             <div
               className={`${mystyle} ${
-                daysStyle["one"]
-                  ? "bg-blue-200 border-blue-800 text-blue-700"
-                  : ""
+                daysStyle["one"] ? "border-blue-800 text-blue-700" : ""
               }`}
               onClick={() => {
                 dispatch(numberOfDays(1));
@@ -51,9 +49,7 @@ const MainGraph = () => {
             </div>
             <div
               className={`${mystyle} ${
-                daysStyle["week"]
-                  ? "bg-blue-200 border-blue-800 text-blue-700"
-                  : ""
+                daysStyle["week"] ? "border-blue-800 text-blue-700" : ""
               }`}
               onClick={() => {
                 dispatch(numberOfDays(7));
@@ -70,9 +66,7 @@ const MainGraph = () => {
             </div>
             <div
               className={`${mystyle} ${
-                daysStyle["month"]
-                  ? "bg-blue-200 border-blue-800 text-blue-700"
-                  : ""
+                daysStyle["month"] ? "border-blue-800 text-blue-700" : ""
               }`}
               onClick={() => {
                 dispatch(numberOfDays(30));
@@ -89,9 +83,7 @@ const MainGraph = () => {
             </div>
             <div
               className={`${mystyle} ${
-                daysStyle["six_months"]
-                  ? "bg-blue-200 border-blue-800 text-blue-700"
-                  : ""
+                daysStyle["six_months"] ? "border-blue-800 text-blue-700" : ""
               }`}
               onClick={() => {
                 dispatch(numberOfDays(180));
@@ -108,9 +100,7 @@ const MainGraph = () => {
             </div>
             <div
               className={`${mystyle} ${
-                daysStyle["year"]
-                  ? "bg-blue-200 border-blue-800 text-blue-700"
-                  : ""
+                daysStyle["year"] ? "border-blue-800 text-blue-700" : ""
               }`}
               onClick={() => {
                 dispatch(numberOfDays(365));

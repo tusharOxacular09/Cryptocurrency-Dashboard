@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { networkError } from "../redux/state/action";
+import { networkError } from "../../redux/state/action";
 
 const CoinExchange = () => {
   const [sell, setSell] = useState(null);

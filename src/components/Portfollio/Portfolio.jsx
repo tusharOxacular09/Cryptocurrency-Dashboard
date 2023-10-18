@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
 import { useDispatch, useSelector } from "react-redux";
-import { networkError } from "../redux/state/action";
-import { OfflineData } from "../static-data/fake-data";
+import { networkError } from "../../redux/state/action";
+import { OfflineData } from "../../static-data/fake-data";
 import axios from "axios";
 
 const Portfolio = () => {

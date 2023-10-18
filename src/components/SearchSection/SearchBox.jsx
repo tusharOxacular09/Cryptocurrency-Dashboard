@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { cryptocurrency, networkError } from "../redux/state/action";
+import { cryptocurrency, networkError } from "../../redux/state/action";
 import axios from "axios";
 
 const SearchBox = () => {

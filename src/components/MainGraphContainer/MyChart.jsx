@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { defaults } from "chart.js/auto";
 import { Bar, Line } from "react-chartjs-2";
-import { HistoricalChart } from "../api/api";
+import { HistoricalChart } from "../../api/api";
 import { useDispatch, useSelector } from "react-redux";
-import { networkError } from "../redux/state/action";
+import { networkError } from "../../redux/state/action";
 import { toast } from "react-toastify";
 import axios from "axios";
 
@@ -20,7 +20,7 @@ export const MyChart = () => {
   const selectedChart = useSelector((state) => state.ChartTypeSelector);
   const [data, setData] = useState([]);
 
-  // useEffect hook to render te function on each changes in the following dependency
+  // useEffect hook to render the function on each changes in the following dependency
   useEffect(() => {
     // async function to get historical data from api
     const getData = async () => {

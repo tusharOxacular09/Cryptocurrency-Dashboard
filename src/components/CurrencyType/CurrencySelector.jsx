@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { myCurrencies } from "../static-data/fake-data";
+import { myCurrencies } from "../../static-data/fake-data";
 import { useDispatch, useSelector } from "react-redux";
-import { currencyOfCountry } from "../redux/state/action";
+import { currencyOfCountry } from "../../redux/state/action";
 
 const CurrencySelector = () => {
   const selectedCurrency = useSelector((state) => state.currentCurrency);

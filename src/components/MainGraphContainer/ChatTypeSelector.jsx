@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { ChatType } from "../static-data/fake-data";
+import { ChatType } from "../../static-data/fake-data";
 import { useDispatch, useSelector } from "react-redux";
-import { myChartType } from "../redux/state/action";
+import { myChartType } from "../../redux/state/action";
 
 const ChatTypeSelector = () => {
   // state for opening the drop-down

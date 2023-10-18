@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import CoinExchange from "./components/CoinExchange";
-import CurrencySelector from "./components/CurrencySelector";
-import MainGraph from "./components/MainGraph";
-import MarketCap from "./components/MarketCap";
-import NavBar from "./components/NavBar";
-import Portfolio from "./components/Portfolio";
-import SearchBox from "./components/SearchBox";
+import CoinExchange from "./components/CoinExchange/CoinExchange"
+import CurrencySelector from "./components/CurrencyType/CurrencySelector"
+import MainGraph from "./components/MainGraphContainer/MainGraph";
+import MarketCap from "./components/MarketCap/MarketCap";
+import NavBar from "./components/NavigationSection/NavBar";
+import Portfolio from "./components/Portfollio/Portfolio";
+import SearchBox from "./components/SearchSection/SearchBox";
 import { toast } from 'react-toastify';
 
 function App() {
