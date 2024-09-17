@@ -24,7 +24,7 @@ const CryptocurrencySelector = () => {
   // useEffect hook to render the function on each reload
   useEffect(() => {
     getCryptoCurrencies();
-  });
+  }, []);
 
   // Function to open and close the drop-down list
   const toggling = () => {
